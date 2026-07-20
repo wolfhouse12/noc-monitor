@@ -2,7 +2,7 @@
 
 A small uptime/incident monitoring system, built to demonstrate the core concepts behind NOC (Network Operations Center) work: continuous service monitoring, incident detection, alerting, and status reporting.
 
-**Live status page:** _add your GitHub Pages URL here_
+**Live status page:** https://wolfhouse12.github.io/noc-monitor/
 
 ## What it does
 
