@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Service Status</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Service Status</h1>
+      <p class="subtitle">Live uptime monitoring, checked every 10 minutes.</p>
+    </header>
+
+    <div id="overall-banner" class="banner banner--loading">Loading status…</div>
+
+    <section id="services" class="services"></section>
+
+    <footer>
+      <p id="last-run">—</p>
+      <p class="source-note">
+        Automated checks via <a href="https://github.com/wolfhouse12/noc-monitor" target="_blank" rel="noopener">GitHub Actions</a>,
+        running on a cron schedule with no server to maintain.
+      </p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
