@@ -1221,17 +1221,24 @@
           "status_code": 200,
           "response_ms": 955,
           "error": null
+        },
+        {
+          "timestamp": "2026-08-02T01:11:14.956768+00:00",
+          "status": "up",
+          "status_code": 200,
+          "response_ms": 1069,
+          "error": null
         }
       ],
       "current_status": "up",
-      "last_checked": "2026-08-01T23:34:55.135158+00:00",
-      "last_response_ms": 955,
+      "last_checked": "2026-08-02T01:11:14.956768+00:00",
+      "last_response_ms": 1069,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
       "uptime_7d_pct": 100.0,
       "ssl_expires": "2026-09-26T13:27:56+00:00",
-      "ssl_checked_date": "2026-08-01"
+      "ssl_checked_date": "2026-08-02"
     },
     "shalhevet": {
       "name": "Shalhevet Community Center",
@@ -2454,18 +2461,25 @@
           "status_code": 200,
           "response_ms": 136,
           "error": null
+        },
+        {
+          "timestamp": "2026-08-02T01:11:16.142208+00:00",
+          "status": "up",
+          "status_code": 200,
+          "response_ms": 76,
+          "error": null
         }
       ],
       "current_status": "up",
-      "last_checked": "2026-08-01T23:34:56.091085+00:00",
-      "last_response_ms": 136,
+      "last_checked": "2026-08-02T01:11:16.142208+00:00",
+      "last_response_ms": 76,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
       "uptime_7d_pct": 100.0,
       "ssl_expires": "2026-09-26T13:27:56+00:00",
-      "ssl_checked_date": "2026-08-01"
+      "ssl_checked_date": "2026-08-02"
     }
   },
-  "last_run": "2026-08-01T23:34:56.228030+00:00"
+  "last_run": "2026-08-02T01:11:16.254037+00:00"
 }
