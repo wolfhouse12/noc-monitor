@@ -4133,11 +4133,18 @@
           "status_code": 200,
           "response_ms": 899,
           "error": null
+        },
+        {
+          "timestamp": "2026-08-18T12:03:20.447521+00:00",
+          "status": "up",
+          "status_code": 200,
+          "response_ms": 856,
+          "error": null
         }
       ],
       "current_status": "up",
-      "last_checked": "2026-08-18T11:43:44.443699+00:00",
-      "last_response_ms": 899,
+      "last_checked": "2026-08-18T12:03:20.447521+00:00",
+      "last_response_ms": 856,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
@@ -8278,11 +8285,18 @@
           "status_code": 200,
           "response_ms": 239,
           "error": null
+        },
+        {
+          "timestamp": "2026-08-18T12:03:21.305353+00:00",
+          "status": "up",
+          "status_code": 200,
+          "response_ms": 127,
+          "error": null
         }
       ],
       "current_status": "up",
-      "last_checked": "2026-08-18T11:43:45.343885+00:00",
-      "last_response_ms": 239,
+      "last_checked": "2026-08-18T12:03:21.305353+00:00",
+      "last_response_ms": 127,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
@@ -8291,5 +8305,5 @@
       "ssl_checked_date": "2026-08-18"
     }
   },
-  "last_run": "2026-08-18T11:43:45.584305+00:00"
+  "last_run": "2026-08-18T12:03:21.434011+00:00"
 }
