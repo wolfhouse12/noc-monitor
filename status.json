@@ -5,13 +5,6 @@
       "url": "https://job-tracker-eosin-two.vercel.app/",
       "history": [
         {
-          "timestamp": "2026-07-21T14:50:20.427051+00:00",
-          "status": "up",
-          "status_code": 200,
-          "response_ms": 799,
-          "error": null
-        },
-        {
           "timestamp": "2026-07-21T16:20:16.481650+00:00",
           "status": "up",
           "status_code": 200,
@@ -7003,11 +6996,18 @@
           "status_code": 200,
           "response_ms": 1251,
           "error": null
+        },
+        {
+          "timestamp": "2026-09-10T21:58:10.271640+00:00",
+          "status": "degraded",
+          "status_code": 200,
+          "response_ms": 3176,
+          "error": null
         }
       ],
-      "current_status": "up",
-      "last_checked": "2026-09-10T19:48:30.361212+00:00",
-      "last_response_ms": 1251,
+      "current_status": "degraded",
+      "last_checked": "2026-09-10T21:58:10.271640+00:00",
+      "last_response_ms": 3176,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
@@ -7019,13 +7019,6 @@
       "name": "Shalhevet Community Center",
       "url": "https://shalhevet-website.vercel.app/",
       "history": [
-        {
-          "timestamp": "2026-07-21T14:50:21.226457+00:00",
-          "status": "up",
-          "status_code": 200,
-          "response_ms": 51,
-          "error": null
-        },
         {
           "timestamp": "2026-07-21T16:20:17.245017+00:00",
           "status": "up",
@@ -14018,11 +14011,18 @@
           "status_code": 200,
           "response_ms": 258,
           "error": null
+        },
+        {
+          "timestamp": "2026-09-10T21:58:13.662919+00:00",
+          "status": "up",
+          "status_code": 200,
+          "response_ms": 393,
+          "error": null
         }
       ],
       "current_status": "up",
-      "last_checked": "2026-09-10T19:48:31.614031+00:00",
-      "last_response_ms": 258,
+      "last_checked": "2026-09-10T21:58:13.662919+00:00",
+      "last_response_ms": 393,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
@@ -14031,5 +14031,5 @@
       "ssl_checked_date": "2026-09-10"
     }
   },
-  "last_run": "2026-09-10T19:48:31.873952+00:00"
+  "last_run": "2026-09-10T21:58:14.058232+00:00"
 }
