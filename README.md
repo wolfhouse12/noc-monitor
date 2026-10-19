@@ -14,7 +14,7 @@ A small uptime/incident monitoring system, built to demonstrate the core concept
 
 ## How it runs
 
-There's no server to keep running. A **GitHub Actions workflow** (`.github/workflows/monitor.yml`) runs `check.py` on a cron schedule (every 10 minutes), and commits the updated `status.json` back to the repo. The static status page (`index.html` + `app.js`) reads that same `status.json` and is served for free via GitHub Pages — so the whole system costs nothing to run and needs no infrastructure of its own to monitor infrastructure.
+There's no server to keep running. A **GitHub Actions workflow** (`.github/workflows/monitor.yml`) runs `check.py` on a cron schedule (every 10 minutes requested; in practice GitHub delays scheduled runs on free repos, often to once every few hours), and commits the updated `status.json` back to the repo. The static status page (`index.html` + `app.js`) reads that same `status.json` and is served for free via GitHub Pages — so the whole system costs nothing to run and needs no infrastructure of its own to monitor infrastructure.
 
 ## Architecture
 

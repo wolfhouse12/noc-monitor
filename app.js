@@ -1,6 +1,12 @@
 const STATUS_LABEL = { up: "Operational", degraded: "Degraded", down: "Down" };
 const HISTORY_BARS = 40;
 
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  })[c]);
+}
+
 function formatTime(iso) {
   if (!iso) return "—";
   return new Date(iso).toLocaleString(undefined, {
@@ -14,21 +20,31 @@ function worstStatus(statuses) {
   return "up";
 }
 
+function historySummary(history) {
+  if (!history.length) return "No check history yet";
+  const down = history.filter((h) => h.status === "down").length;
+  const degraded = history.filter((h) => h.status === "degraded").length;
+  return `Last ${history.length} checks: ${history.length - down - degraded} up, ${degraded} degraded, ${down} down`;
+}
+
 function renderService(service) {
-  const status = service.current_status || "down";
+  const status = STATUS_LABEL[service.current_status] ? service.current_status : "down";
   const history = (service.history || []).slice(-HISTORY_BARS);
   const bars = history
-    .map((h) => `<div class="history-bar history-bar--${h.status}" title="${formatTime(h.timestamp)} · ${h.status}"></div>`)
+    .map((h) => {
+      const s = STATUS_LABEL[h.status] ? h.status : "down";
+      return `<div class="history-bar history-bar--${s}" title="${formatTime(h.timestamp)} · ${STATUS_LABEL[s]}"></div>`;
+    })
     .join("");
 
   return `
     <div class="service">
       <div class="service-top">
         <div>
-          <div class="service-name">${service.name}</div>
-          <div class="service-url">${service.url}</div>
+          <div class="service-name">${escapeHtml(service.name)}</div>
+          <div class="service-url">${escapeHtml(service.url)}</div>
         </div>
-        <span class="pill pill--${status}">${STATUS_LABEL[status] ?? status}</span>
+        <span class="pill pill--${status}">${STATUS_LABEL[status]}</span>
       </div>
       <div class="service-meta">
         <span>Response: <strong>${service.last_response_ms ?? "—"}ms</strong></span>
@@ -36,7 +52,7 @@ function renderService(service) {
         <span>Uptime (7d): <strong>${service.uptime_7d_pct ?? "—"}%</strong></span>
         <span>Checked: <strong>${formatTime(service.last_checked)}</strong></span>
       </div>
-      <div class="history">${bars || "<span style='color:var(--muted);font-size:0.8rem;'>No history yet</span>"}</div>
+      <div class="history" role="img" aria-label="${escapeHtml(historySummary(history))}">${bars || "<span style='color:var(--muted);font-size:0.8rem;'>No history yet</span>"}</div>
     </div>
   `;
 }

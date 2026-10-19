@@ -10,6 +10,7 @@ import json
 import os
 import socket
 import ssl
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
@@ -17,7 +18,10 @@ from urllib.parse import urlparse
 import requests
 
 STATUS_FILE = Path(__file__).parent / "status.json"
-MAX_HISTORY = 1000
+# History is trimmed by age, not count: the 7-day uptime needs 7 days of checks however often
+# GitHub actually runs the schedule. MAX_HISTORY is only a safety cap on file size.
+HISTORY_DAYS = 8
+MAX_HISTORY = 2000
 TIMEOUT_SECONDS = 10
 SLOW_THRESHOLD_MS = 3000
 
@@ -57,9 +61,9 @@ def check_service(service):
         "error": None,
     }
     try:
-        start = datetime.now()
+        start = time.monotonic()
         resp = requests.get(service["url"], timeout=TIMEOUT_SECONDS)
-        elapsed_ms = round((datetime.now() - start).total_seconds() * 1000)
+        elapsed_ms = round((time.monotonic() - start) * 1000)
         result["status_code"] = resp.status_code
         result["response_ms"] = elapsed_ms
         if resp.status_code < 400:
@@ -103,8 +107,11 @@ def send_alert(subject, body):
             json={"from": from_email, "to": [to_email], "subject": subject, "text": body},
             timeout=10,
         )
-        print(f"Alert sent ({subject}): HTTP {resp.status_code}")
-    except Exception as e:
+        if resp.ok:
+            print(f"Alert sent: {subject}")
+        else:
+            print(f"Alert failed ({subject}): HTTP {resp.status_code}")
+    except requests.RequestException as e:
         print(f"Failed to send alert: {e}")
 
 
@@ -129,7 +136,10 @@ def main():
         entry["last_error"] = result["error"]
 
         entry["history"].append(result)
-        entry["history"] = entry["history"][-MAX_HISTORY:]
+        cutoff = datetime.now(timezone.utc).timestamp() - HISTORY_DAYS * 86400
+        entry["history"] = [
+            h for h in entry["history"] if datetime.fromisoformat(h["timestamp"]).timestamp() >= cutoff
+        ][-MAX_HISTORY:]
 
         entry["uptime_24h_pct"] = calc_uptime_pct(entry["history"], 24)
         entry["uptime_7d_pct"] = calc_uptime_pct(entry["history"], 24 * 7)
@@ -146,7 +156,7 @@ def main():
                     f"{service['name']} ({service['url']}) went down at {result['timestamp']}.\n"
                     f"Error: {result['error']}",
                 )
-            elif result["status"] == "up" and previous_status == "down":
+            elif result["status"] == "up":
                 send_alert(
                     f"[RECOVERED] {service['name']}",
                     f"{service['name']} ({service['url']}) is back up as of {result['timestamp']}.",
