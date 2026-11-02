@@ -5,20 +5,6 @@
       "url": "https://job-tracker-eosin-two.vercel.app/",
       "history": [
         {
-          "timestamp": "2026-10-24T23:42:44.999617+00:00",
-          "status": "up",
-          "status_code": 200,
-          "response_ms": 854,
-          "error": null
-        },
-        {
-          "timestamp": "2026-10-25T01:42:38.333362+00:00",
-          "status": "up",
-          "status_code": 200,
-          "response_ms": 704,
-          "error": null
-        },
-        {
           "timestamp": "2026-10-25T06:56:12.634763+00:00",
           "status": "up",
           "status_code": 200,
@@ -297,36 +283,29 @@
           "status_code": 200,
           "response_ms": 1152,
           "error": null
+        },
+        {
+          "timestamp": "2026-11-02T01:52:36.506621+00:00",
+          "status": "up",
+          "status_code": 200,
+          "response_ms": 1152,
+          "error": null
         }
       ],
       "current_status": "up",
-      "last_checked": "2026-11-01T22:44:41.889541+00:00",
+      "last_checked": "2026-11-02T01:52:36.506621+00:00",
       "last_response_ms": 1152,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
       "uptime_7d_pct": 100.0,
       "ssl_expires": "2027-01-29T11:46:09+00:00",
-      "ssl_checked_date": "2026-11-01"
+      "ssl_checked_date": "2026-11-02"
     },
     "shalhevet": {
       "name": "Shalhevet Community Center",
       "url": "https://shalhevet-website.vercel.app/",
       "history": [
-        {
-          "timestamp": "2026-10-24T23:42:45.854539+00:00",
-          "status": "up",
-          "status_code": 200,
-          "response_ms": 94,
-          "error": null
-        },
-        {
-          "timestamp": "2026-10-25T01:42:39.160440+00:00",
-          "status": "up",
-          "status_code": 200,
-          "response_ms": 117,
-          "error": null
-        },
         {
           "timestamp": "2026-10-25T06:56:13.671982+00:00",
           "status": "up",
@@ -606,18 +585,25 @@
           "status_code": 200,
           "response_ms": 274,
           "error": null
+        },
+        {
+          "timestamp": "2026-11-02T01:52:37.777231+00:00",
+          "status": "up",
+          "status_code": 200,
+          "response_ms": 214,
+          "error": null
         }
       ],
       "current_status": "up",
-      "last_checked": "2026-11-01T22:44:43.042215+00:00",
-      "last_response_ms": 274,
+      "last_checked": "2026-11-02T01:52:37.777231+00:00",
+      "last_response_ms": 214,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
       "uptime_7d_pct": 100.0,
       "ssl_expires": "2027-01-29T11:46:09+00:00",
-      "ssl_checked_date": "2026-11-01"
+      "ssl_checked_date": "2026-11-02"
     }
   },
-  "last_run": "2026-11-01T22:44:43.316964+00:00"
+  "last_run": "2026-11-02T01:52:38.091128+00:00"
 }
