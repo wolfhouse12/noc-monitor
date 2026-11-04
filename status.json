@@ -5,13 +5,6 @@
       "url": "https://job-tracker-eosin-two.vercel.app/",
       "history": [
         {
-          "timestamp": "2026-10-27T19:33:58.690751+00:00",
-          "status": "up",
-          "status_code": 200,
-          "response_ms": 1129,
-          "error": null
-        },
-        {
           "timestamp": "2026-10-27T23:06:56.191516+00:00",
           "status": "up",
           "status_code": 200,
@@ -255,11 +248,18 @@
           "status_code": 200,
           "response_ms": 1210,
           "error": null
+        },
+        {
+          "timestamp": "2026-11-04T22:09:44.616641+00:00",
+          "status": "up",
+          "status_code": 200,
+          "response_ms": 1326,
+          "error": null
         }
       ],
       "current_status": "up",
-      "last_checked": "2026-11-04T16:32:09.653470+00:00",
-      "last_response_ms": 1210,
+      "last_checked": "2026-11-04T22:09:44.616641+00:00",
+      "last_response_ms": 1326,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
@@ -271,13 +271,6 @@
       "name": "Shalhevet Community Center",
       "url": "https://shalhevet-website.vercel.app/",
       "history": [
-        {
-          "timestamp": "2026-10-27T19:33:59.820348+00:00",
-          "status": "up",
-          "status_code": 200,
-          "response_ms": 321,
-          "error": null
-        },
         {
           "timestamp": "2026-10-27T23:06:57.116870+00:00",
           "status": "up",
@@ -522,11 +515,18 @@
           "status_code": 200,
           "response_ms": 260,
           "error": null
+        },
+        {
+          "timestamp": "2026-11-04T22:09:45.943811+00:00",
+          "status": "up",
+          "status_code": 200,
+          "response_ms": 239,
+          "error": null
         }
       ],
       "current_status": "up",
-      "last_checked": "2026-11-04T16:32:10.864281+00:00",
-      "last_response_ms": 260,
+      "last_checked": "2026-11-04T22:09:45.943811+00:00",
+      "last_response_ms": 239,
       "last_status_code": 200,
       "last_error": null,
       "uptime_24h_pct": 100.0,
@@ -535,5 +535,5 @@
       "ssl_checked_date": "2026-11-04"
     }
   },
-  "last_run": "2026-11-04T16:32:11.125625+00:00"
+  "last_run": "2026-11-04T22:09:46.183650+00:00"
 }
